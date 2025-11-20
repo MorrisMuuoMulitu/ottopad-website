@@ -58,18 +58,18 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-24 bg-zinc-50">
+    <section id="services" className="py-24 bg-gray-1000">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Elevate Your Business with Expert Web Solutions</h2>
-            <p className="text-zinc-500 max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 text-gray-50">Elevate Your Business with Expert Web Solutions</h2>
+            <p className="text-gray-400 max-w-2xl">
               A selection of our core services designed to help your business succeed online.
             </p>
           </div>
           <button
             onClick={openAllServicesModal}
-            className="text-emerald-600 font-medium flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded"
+            className="text-primary-400 font-medium flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded"
           >
             View all services{' '}
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -81,18 +81,18 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={i}
-              className="p-8 rounded-[2rem] bg-white border border-zinc-100 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-200/50 transition-all duration-300 group relative overflow-hidden"
+              className="p-8 rounded-[2rem] bg-gray-900 border border-gray-800 hover:border-primary-500 hover:shadow-xl hover:shadow-primary-500/20 transition-all duration-300 group relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full bg-emerald-50/30 group-hover:scale-150 group-hover:opacity-40 transition-all duration-700" />
-              <div className="absolute top-0 right-0 w-32 h-32 -mr-14 -mt-14 rounded-full bg-emerald-100/40 group-hover:scale-125 group-hover:opacity-30 transition-all duration-700" />
-              <service.icon className="w-10 h-10 text-emerald-600 mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+              <div className="absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 rounded-full bg-primary-500/10 group-hover:scale-150 group-hover:opacity-40 transition-all duration-700" />
+              <div className="absolute top-0 right-0 w-32 h-32 -mr-14 -mt-14 rounded-full bg-primary-500/20 group-hover:scale-125 group-hover:opacity-30 transition-all duration-700" />
+              <service.icon className="w-10 h-10 text-primary-500 mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10" />
               <h3 className="text-xl font-bold mb-2 relative z-10">{service.title}</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-4 relative z-10">{service.desc}</p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 relative z-10">{service.desc}</p>
               <div className="mt-4 relative z-10">
-                <p className="text-emerald-600 font-semibold">{service.price}</p>
+                <p className="text-primary-400 font-semibold">{service.price}</p>
                 <button
                   onClick={() => openServiceModal(i)}
-                  className="inline-flex items-center gap-2 text-emerald-600 text-sm font-medium mt-3 group-hover:gap-3 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded relative z-10"
+                  className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium mt-3 group-hover:gap-3 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded relative z-10"
                 >
                   View Details <span aria-hidden="true">→</span>
                 </button>
@@ -108,43 +108,43 @@ export default function Services() {
             onClick={closeServiceModal}
           >
             <div 
-              className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-gray-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-8">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center">
-                      {React.createElement(services[selectedService].icon, { className: "w-7 h-7 text-emerald-600" })}
+                    <div className="w-14 h-14 rounded-2xl bg-primary-500/10 flex items-center justify-center">
+                      {React.createElement(services[selectedService].icon, { className: "w-7 h-7 text-primary-500" })}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-zinc-900">{services[selectedService].title}</h3>
-                      <p className="text-emerald-600 font-semibold mt-1">{services[selectedService].price}</p>
+                      <h3 className="text-2xl font-bold text-gray-50">{services[selectedService].title}</h3>
+                      <p className="text-primary-400 font-semibold mt-1">{services[selectedService].price}</p>
                     </div>
                   </div>
                   <button
                     onClick={closeServiceModal}
-                    className="text-zinc-500 hover:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-full p-2 transition-colors"
+                    className="text-gray-400 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-full p-2 transition-colors"
                     aria-label="Close modal"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 
-                <p className="text-zinc-600 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-6">
                   {services[selectedService].details}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-zinc-100">
+                <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-800">
                   <Link
                     href="#contact"
-                    className="flex-1 bg-emerald-600 text-white text-center py-3 px-6 rounded-full font-medium hover:bg-emerald-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex-1 bg-primary-600 text-white text-center py-3 px-6 rounded-full font-medium hover:bg-primary-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   >
                     Get Started
                   </Link>
                   <button
                     onClick={closeServiceModal}
-                    className="flex-1 border border-zinc-300 text-zinc-700 py-3 px-6 rounded-full font-medium hover:bg-zinc-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex-1 border border-gray-700 text-gray-200 py-3 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   >
                     Back to Services
                   </button>
@@ -161,15 +161,15 @@ export default function Services() {
             onClick={closeAllServicesModal}
           >
             <div 
-              className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-gray-900 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-8">
                 <div className="flex justify-between items-center mb-8">
-                  <h3 className="text-2xl font-bold text-zinc-900">All Services</h3>
+                  <h3 className="text-2xl font-bold text-gray-50">All Services</h3>
                   <button
                     onClick={closeAllServicesModal}
-                    className="text-zinc-500 hover:text-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-full p-2 transition-colors"
+                    className="text-gray-400 hover:text-gray-200 focus:outline-none focus:ring-2 focus-visible:ring-primary-500 rounded-full p-2 transition-colors"
                     aria-label="Close modal"
                   >
                     <X className="w-5 h-5" />
@@ -180,26 +180,26 @@ export default function Services() {
                   {services.map((service, index) => (
                     <div 
                       key={index} 
-                      className="border border-zinc-200 rounded-2xl p-6 hover:shadow-md transition-shadow"
+                      className="border border-gray-800 rounded-2xl p-6 hover:shadow-md transition-shadow"
                     >
                       <div className="flex items-start gap-4 mb-3">
-                        <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0">
-                          {React.createElement(service.icon, { className: "w-5 h-5 text-emerald-600" })}
+                        <div className="w-10 h-10 rounded-xl bg-primary-500/10 flex items-center justify-center flex-shrink-0">
+                          {React.createElement(service.icon, { className: "w-5 h-5 text-primary-500" })}
                         </div>
                         <div>
-                          <h4 className="font-bold text-lg text-zinc-900">{service.title}</h4>
-                          <p className="text-emerald-600 font-semibold mt-1">{service.price}</p>
+                          <h4 className="font-bold text-lg text-gray-50">{service.title}</h4>
+                          <p className="text-primary-400 font-semibold mt-1">{service.price}</p>
                         </div>
                       </div>
                       
-                      <p className="text-zinc-600 text-sm mb-4">{service.desc}</p>
+                      <p className="text-gray-300 text-sm mb-4">{service.desc}</p>
                       
                       <button
                         onClick={() => {
                           closeAllServicesModal();
                           openServiceModal(index);
                         }}
-                        className="text-emerald-600 text-sm font-medium hover:underline"
+                        className="text-primary-400 text-sm font-medium hover:underline"
                       >
                         Learn more →
                       </button>
@@ -207,16 +207,16 @@ export default function Services() {
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-zinc-100 mt-8">
+                <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-800 mt-8">
                   <Link
                     href="#contact"
-                    className="flex-1 bg-emerald-600 text-white text-center py-3 px-6 rounded-full font-medium hover:bg-emerald-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex-1 bg-primary-600 text-white text-center py-3 px-6 rounded-full font-medium hover:bg-primary-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   >
                     Contact Us for Any Service
                   </Link>
                   <button
                     onClick={closeAllServicesModal}
-                    className="flex-1 border border-zinc-300 text-zinc-700 py-3 px-6 rounded-full font-medium hover:bg-zinc-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="flex-1 border border-gray-700 text-gray-200 py-3 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                   >
                     Back to Services
                   </button>

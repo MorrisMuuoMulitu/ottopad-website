@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,10 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          emerald: '#10b981',
-          teal: '#14b8a6',
-        }
+        gray: {
+          ...colors.zinc,
+          1000: '#121212',
+        },
+        primary: colors.blue,
+        secondary: colors.emerald,
+        accent: colors.cyan,
       },
       borderRadius: {
         'xl': '1rem',

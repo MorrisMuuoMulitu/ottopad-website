@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <SEO />
-      <div className="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-emerald-500/20 font-sans">
+      <div className="min-h-screen bg-gray-950 text-gray-200 selection:bg-primary-500/20 font-sans">
         <Header 
           isScrolled={isScrolled} 
           mobileMenuOpen={mobileMenuOpen} 
